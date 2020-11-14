@@ -7,19 +7,43 @@
 <script>
 
 import Quad from '../effects/quad'
+import * as THREE from '../../external/three'
 
 export default {
 
   data () {
     return {
-      title: 'Code 4 fun~',
-      quad: new Quad()
+      title: 'Code 4 fun~'
+      // quad: undefined
     }
   },
 
   mounted () {
-    // this.$data.quad = new Quad()
-    var quad = this.$data.quad
+    var scene = new THREE.Scene()
+    scene.background = new THREE.Color(0x000000)
+
+    var quad = new Quad()
+    var quad1 = new Quad(undefined, 'fs1.glsl')
+
+    var renderList = [
+      quad,
+      quad1
+    ]
+
+    THREE.Cache.enabled = true
+
+    THREE.DefaultLoadingManager.onLoad = function () {
+      for (var i in renderList) {
+        if (renderList.hasOwnProperty(i)) {
+          var renderer = renderList[i]
+          var planeMesh = new THREE.Mesh(renderer.getGeometry(), renderer.getMaterial())
+          scene.add(planeMesh)
+        }
+      }
+      console.log('Loading Complete!')
+    }
+
+    /* */
 
     console.log(document.getElementById('app'))
     var app = document.getElementById('app')
@@ -32,11 +56,19 @@ export default {
     }
     app.appendChild(canvas)
 
+    var imgWidth = 720
+    var imgHeight = 1280
+    var camera = new THREE.OrthographicCamera(-imgWidth / 2, imgWidth / 2, imgHeight / 2, imgHeight / -2, 0.1, 1000)
     animate()
 
     function animate () {
       requestAnimationFrame(animate)
-      quad.draw()
+      quad.clear(0xffff00)
+      for (var i in renderList) {
+        if (renderList.hasOwnProperty(i)) {
+          renderList[i].draw(scene, camera)
+        }
+      }
     }
   }
 }
