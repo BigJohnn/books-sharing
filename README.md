@@ -1,4 +1,4 @@
-# code-4-fun
+# Code-4-fun
 
 ## How to Run
     brew install npm
