@@ -45,6 +45,7 @@ export default {
 
     /* */
     console.log('666')
+    console.log('777')
     console.log(document.getElementById('app'))
     var app = document.getElementById('app')
     var canvas = quad.getRenderer().domElement
