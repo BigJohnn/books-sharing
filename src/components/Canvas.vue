@@ -44,7 +44,7 @@ export default {
     }
 
     /* */
-
+    console.log('666')
     console.log(document.getElementById('app'))
     var app = document.getElementById('app')
     var canvas = quad.getRenderer().domElement
@@ -76,12 +76,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #sl{
-    margin: 10px 5px 5px 10px;
-    float: left;
-    background-color: aliceblue;
-    width: 430px;
-  }
+  /*#sl{*/
+  /*  margin: 10px 5px 5px 10px;*/
+  /*  float: left;*/
+  /*  background-color: aliceblue;*/
+  /*  width: 430px;*/
+  /*}*/
   [v-cloak] {
     display: none;
   }
