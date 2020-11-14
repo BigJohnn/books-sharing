@@ -3,18 +3,12 @@ import * as THREE from '../../external/three'
 // eslint-disable-next-line one-var
 var imgWidth = 360 * 2,
   imgHeight = 640 * 2,
-  // scene,
-  // camera,
-  // renderer,
   imgUrl = '/static/images/test.png',
   planeGeometry
-  // planeMaterial,
-  // planeMesh
   // imgSize
 
 export default class Quad {
   constructor (vsPath, fsPath) {
-    // this.name = name
     this.complete = false
 
     this.planeMaterial = new THREE.ShaderMaterial()
@@ -31,9 +25,7 @@ export default class Quad {
     var loader = new THREE.TextureLoader()
     loader.load(imgUrl, function (texture) {
       this.complete = true
-
       this.resize(texture.image.width, texture.image.height)
-
       planeMaterial.uniforms.inputImageTexture = {value: texture}
     }.bind(this))
 
@@ -71,13 +63,6 @@ export default class Quad {
 
   resize (width, height) {
     // imgSize = new THREE.Vector2(width, height)
-    console.log('imgWidth', imgWidth)
-
-    // camera.left = -width / 2
-    // camera.right = width / 2
-    // camera.top = height / 2
-    // camera.bottom = -height / 2
-
     this.renderer.setSize(width, height)
     this.renderer.setViewport(0, 0, width, height)
 
