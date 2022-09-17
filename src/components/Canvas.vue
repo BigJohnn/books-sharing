@@ -1,19 +1,28 @@
 <template>
   <div class="CanvasX" v-cloak>
     <h1>{{ title }}</h1>
+    <h5>{{ author }}</h5>
+    <h2 align="left">{{ outline }}</h2>
+    <p align="left">{{whattodo}}</p>
   </div>
 </template>
 
 <script>
 
+/* eslint-disable */
 import Quad from '../effects/quad'
 import * as THREE from '../../external/three'
+import { useCssModule } from 'vue'
 
 export default {
 
   data () {
     return {
-      title: 'Code 4 fun~'
+      title: 'A Short Guide to a LONG LIFE 《长寿指南》',
+      author: 'DAVID B. AGUS, MD',
+      outline: '哪些事情应该做？',
+      whattodo: '1.看，听，感受身体状况，并记录。Listen, Look, Feel(and Record Your Body\'s Features).'
+    
       // quad: undefined
     }
   },
@@ -44,13 +53,12 @@ export default {
     }
 
     /* */
-    console.log('666')
-    console.log('777')
     console.log(document.getElementById('app'))
     var app = document.getElementById('app')
+
     var canvas = quad.getRenderer().domElement
     canvas.id = 'canvas'
-
+    
     if (app.children.length > 1) {
       console.log(app)
       app.removeChild(app.lastChild)
@@ -76,14 +84,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  /*#sl{*/
-  /*  margin: 10px 5px 5px 10px;*/
-  /*  float: left;*/
-  /*  background-color: aliceblue;*/
-  /*  width: 430px;*/
-  /*}*/
+<style type="text/css" scoped>
   [v-cloak] {
     display: none;
+  }
+  p {
+    text-indent: 2em;
   }
 </style>

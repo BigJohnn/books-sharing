@@ -3,7 +3,7 @@ import * as THREE from '../../external/three'
 // eslint-disable-next-line one-var
 var imgWidth = 360 * 2,
   imgHeight = 640 * 2,
-  imgUrl = '/static/images/test.png',
+  imgUrl = '/static/images/sglf.png',
   planeGeometry
   // imgSize
 
@@ -25,7 +25,9 @@ export default class Quad {
     var loader = new THREE.TextureLoader()
     loader.load(imgUrl, function (texture) {
       this.complete = true
-      this.resize(texture.image.width, texture.image.height)
+
+      let widthMax = 256
+      this.resize(widthMax, Math.floor(texture.image.height * widthMax / texture.image.width))
       planeMaterial.uniforms.inputImageTexture = {value: texture}
     }.bind(this))
 
