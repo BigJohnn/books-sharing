@@ -4,6 +4,8 @@
     <h5>{{ author }}</h5>
     <li align="left">{{ outline }}</li>
     <p align="left" v-for="(item, i) in todolist" :key="i">{{i+1+'. '+item}}</p>
+    <li align="left">{{ outline2 }}</li>
+    <p align="left" v-for="(item, i) in NOTtodolist" :key="i">{{i+1+'. '+item}}</p>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
       title: 'A Short Guide to a LONG LIFE 读\"长寿指南\"笔记',
       author: 'DAVID B. AGUS, MD (BigJohhn整理)',
       outline: '哪些事情应该做？',
+      outline2: '哪些事情避免做？',
       todolist: [
         'Listen, Look, Feel(and Record Your Body\'s Features).看，听，感受身体状况，并记录。',
         'Measure Yourself. 体重，步数，血压之类的指标，每个人不太一样。定期体检。',
@@ -37,7 +40,56 @@ export default {
         'Get Your Annual Flue Shot, Even If You \"Never Get Sick\" and \"Have Never Gotten the Flu\" 每年接种流感疫苗。',
         'Get Naked. 观察全身的健康状况，矫正体态，减脂，护肤，让身体的健康看得见。',
         'Get Off Your Butt More. 避免久坐。',
-        '54/190， 未完待续......',
+        'Jack Your Heart Rate Up 50 Percent Above Your Resting Baseline for at Least Fifteen Minutes Every Day. 让心率比休息时高50%，每天至少保持15min。比如参加竞技体育运动，hiit等。',
+        'Start a Sensible Caffeine Habit. 咖啡和茶的饮用要适量，下午两点后不宜饮用咖啡☕️，但可以少量饮茶，因为茶🍵里面咖啡因含量相对少些。',
+        'Ask Mom or Dad What Killed Grandpa and Aunt Marge. 从亲人那里了解家族成员疾病史，提前采取措施，降低癌症风险。',
+        'Consider DNA Testing. DNA测试的意义在于，可以更准确地帮助我们提前防范一些疾病。比如，有的人遗传了心脏病去世的直系亲属的致病基因，那么提前采取措施保护心脏🫀。',
+        'Inquire About Statins If You\'re Over the Hill. 如果血脂超标（严重），那么服药。',
+        'Take a Baby Aspirin. 整一盒低剂量阿司匹林（75/81mg）,用于缓解头痛和背痛等，是便宜的非处方药💊*',
+        'Aside by Screening and Booster Vaccination Recommendations. 接种加强针和成人疫苗，了解相关知识。',
+        'Plan a One-, Five-, Ten-, and Twenty- Year Health Strategy. 做长短期健康规划',
+        'Deal with Sickness Smartly. 采取科学的措施应对疾病。',
+        'Manage Chronic Conditions. 管理慢性病。这个很重要，因为有些慢性病不可逆。',
+        'Partner with Your Doc. 如何治疗某种疾病是患者与医生共同决定的，如果不能和大夫谈得融洽，可能需要另外寻找别的大夫。',
+        'Strengthen Your Core and Maintain Good Posture. 强化你的核心，维持好的姿态。',
+        'Smile. 微笑😊， 微笑只需要牵动17块肌肉， 而皱眉😠需要43块！',
+        'Pursue Your Passions. 君子不器。',
+        'Positive. 保持乐观。只要愿望足够强烈，就能够实现。',
+        'Find Out What Exercise or Activity You\'re Bad at and Focus on It. 补短：刻意练习',
+        'Protect Your Eyes and Ears. 保护眼睛和耳朵。',
+        'Don\'t Forget Your Teeth and Feet. 不要忘记刷牙🪥和洗脚。一年看1～2次牙医，穿舒适的鞋。注意脚🦶皮肤健康。',
+        'Learn CPR. 学习心肺复苏。',
+        'Make a Mobile Supply Kit for Emergencies. 制作急救包。',
+        'Eat More Than Three Servings of Cold-Water Fish a Week. 每周吃三条以上的冷水鱼🐟。鲑鱼，沙丁鱼，金枪鱼，鳟鱼，鳀鱼，鲱鱼，比目鱼，鳕鱼，黑鳕鱼，鲭鱼和海豚鱼，营养都棒棒。尽量吃野生鱼。',
+        'Eat at Least Five Servings of Fruits and Vegetables a Day. 每天吃点蔬菜🥬和水果🍉',
+        'Speak Strongly to the Next Generation. 与年轻人多沟通。',
+        'Embrace Your OCD side. 拥抱你的强迫症，轻微的强迫症有益健康。',
+        'Never Skip Breakfast. 坚持吃早餐。',
+        'Seventeen Milligrams Twice a Day. 这句是个反话，实际上，服药的量，应该考虑诸多情况，不应教条主义。*',
+        'Take the Positive from Getting a Disease. 把疾病当成某种警钟，并行动起来，改掉坏的生活习惯。',
+        'S-T-R-E-T-C-H. 做拉伸，这对关节有好处。',
+        'Keep a To-Do List. 制订日程表，做长短期计划。',
+        'Ask for Help. 寻求帮助。个人力量有时候是有限的。',
+        'Have Children. 有小孩的人比丁克族更大概率活得久。',
+        'Comply. 遵医嘱。',
+        'Pick Up a Pooch. 养狗🐶。 养狗🐶的人们更加乐观，遛狗的时候必须停下手头其他事情，很轻松。',
+        'Have the Toughest Conversation. 结束生命或化疗的决定并不好玩，尽量避免走到这一步。如果需要做决定，可以从prepareforyourcare.org开始。',
+        'Understand Basic Biovocabulary. 理解基本的医学词汇。',
+        'Make Your Own Definition of Health. 给出你对于健康的定义。',
+      ],
+      NOTtodolist:[
+        'Bad Ingredients and Fad Diets. 不良营养和不良饮食。',
+        'Detoxes. 排毒。 身体免疫系统天生会排毒，不要使用药物💊。',
+        'Risky Behaviors and Dangerous Sports. 冒险行为和危险运动。⚽️🏀🤼‍♀️🥊等等',
+        'Airport Backscatter X-ray Scanners. 机场后向散射X射线扫描仪, 即不要过多暴露在高能射线照射下。',
+        'Sunburns。晒伤。',
+        'Insomnia. 失眠。万恶之源！',
+        'Stilettos and Other Sneaky Sources of Inflammation. 细高跟鞋和其他隐蔽的炎症源。',
+        'Juicing. 果汁🍹，当我们把水果🍉的结构破坏后，其分子被空气中的氧气氧化，养分损失。所以吃水果🍉而不是喝果汁🍹。',
+        'Eating More Than Three Servings of Red and/or Processed Meats a Week. 每周吃三份以上的红肉或加工肉。',
+        'Vitamins and Supplements. 维他命和补品。',
+        'Absence of Downtime. 缺乏休息♨️',
+        '157/190， 未完待续......',
       ]
     
       // quad: undefined
