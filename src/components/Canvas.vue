@@ -6,6 +6,8 @@
     <p align="left" v-for="(item, i) in todolist" :key="i">{{i+1+'. '+item}}</p>
     <li align="left">{{ outline2 }}</li>
     <p align="left" v-for="(item, i) in NOTtodolist" :key="i">{{i+1+'. '+item}}</p>
+    <li align="left">{{ outline3 }}</li>
+    <p align="left" v-for="(item, i) in doctororders" :key="i">{{i+1+'. '+item}}</p>
   </div>
 </template>
 
@@ -23,6 +25,7 @@ export default {
       author: 'DAVID B. AGUS, MD (BigJohhn整理)',
       outline: '哪些事情应该做？',
       outline2: '哪些事情避免做？',
+      outline3: '医生整理的一些条目（这部分限于篇幅，不再详细展开）',
       todolist: [
         'Listen, Look, Feel(and Record Your Body\'s Features).看，听，感受身体状况，并记录。',
         'Measure Yourself. 体重，步数，血压之类的指标，每个人不太一样。定期体检。',
@@ -89,7 +92,33 @@ export default {
         'Eating More Than Three Servings of Red and/or Processed Meats a Week. 每周吃三份以上的红肉或加工肉。',
         'Vitamins and Supplements. 维他命和补品。',
         'Absence of Downtime. 缺乏休息♨️',
-        '157/190， 未完待续......',
+        'Smoking. 吸烟害处多多。',
+        'Hoarding Your Medical Information. 如果有机会，把个人医疗信息提供给科学研究使用。',
+        
+      ],
+      doctororders:[
+        '20s, 20岁需要注意的事项：血压，空腹胆固醇，牙齿🦷，眼睛👀，性健康，免疫，皮肤测试，睾丸测试，胸部测试，锻炼，糖尿病筛查。',      
+        '30s, 血压，空腹胆固醇，牙齿🦷，眼睛👀，性健康，免疫，皮肤测试，睾丸测试，胸部测试，锻炼，糖尿病筛查。',      
+        '40s, 血压，空腹胆固醇，炎症标志物，牙齿🦷，眼睛👀，性健康，免疫，皮肤测试，睾丸测试，胸部测试，锻炼，糖尿病筛查，前列腺测试，预防药物💊',      
+        '50s, 血压，空腹胆固醇，炎症标志物，结直肠检查，牙齿🦷，眼睛👀，骨质疏松症筛查，免疫，皮肤测试，胸部测试，锻炼，糖尿病筛查，前列腺测试，预防药物💊',      
+        '60s, 腹部超声，血压，空腹胆固醇，炎症标志物，牙齿🦷，眼睛👀，听觉👂，骨质疏松症筛查，免疫，皮肤测试，胸部测试，锻炼，糖尿病筛查，前列腺测试，预防药物💊',      
+        '70s and Beyond, 70岁及以上：腹部超声，血压，空腹胆固醇，炎症标志物，牙齿🦷，眼睛👀，听觉👂，骨质疏松症筛查，免疫，前列腺测试，胸部测试，皮肤测试，锻炼，预防药物💊',      
+        'Health List. 健康行为列表',      
+        'Top 10 Actions for Reduce Your Risk for Illness. ',      
+        'Top 10 Things to Help Educate Kids About Health and Wellness.',      
+        'Top 10 Causes of Death in the United States',      
+        'Top 10 Causes of Death Worldwide',      
+        'Popular Weight Loss Myths. 减肥迷思。',      
+        'Top 10 Foods High in Trans Fat.',      
+        'Top 10 Most sugary Foods.',      
+        'Top High-Glycemic-Index Foods.高血糖指数食物。',      
+        'Top 11 Fish with Omega-3',      
+        'Top 10 Fish with Mercury Contamination. 汞污染',      
+        'Top 10 Most Useful Health and Medicine Websites.',      
+        'Top 5 Food Poisoning Culprits. 食物🍜中毒罪魁祸首。',      
+        'Top 10 Reasons to Go to the ER.去急诊室的十大理由。',      
+        'Top 10 Things to Do During Cold Season. 寒冷季节需要做的10件事。',      
+        'Top 10 Reasons to Take a Walk. 去散步的十个理由。',      
       ]
     
       // quad: undefined
