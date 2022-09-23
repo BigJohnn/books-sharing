@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-<!--    <img src="./assets/logo.png">-->
+   <!-- <img src="./assets/logo.png"> -->
+   <router-link  to="/LongLife" replace>Long Life</router-link>
+   <router-link  to="/JustKeepBuying" replace>Keep Buying</router-link>
     <router-view/>
   </div>
 </template>
 
 <script>
+/* eslint-disable */  
 export default {
   name: 'App'
 }

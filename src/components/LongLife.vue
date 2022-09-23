@@ -1,13 +1,14 @@
 <template>
-  <div class="CanvasX" v-cloak>
+  <div class="LongLife" v-cloak>
     <h1>{{ title }}</h1>
     <h5>{{ author }}</h5>
     <li align="left">{{ outline }}</li>
-    <p align="left" v-for="(item, i) in todolist" :key="i">{{i+1+'. '+item}}</p>
+    <p align="left" v-for="(item, i) in todolist" :key="item.id">{{i+1+'. '+item}}</p>
     <li align="left">{{ outline2 }}</li>
-    <p align="left" v-for="(item, i) in NOTtodolist" :key="i">{{i+1+'. '+item}}</p>
+    <p align="left" v-for="(item, i) in NOTtodolist" :key="item.id">{{i+1+'. '+item}}</p>
     <li align="left">{{ outline3 }}</li>
-    <p align="left" v-for="(item, i) in doctororders" :key="i">{{i+1+'. '+item}}</p>
+    <p align="left" v-for="(item, i) in doctororders" :key="item.id">{{i+1+'. '+item}}</p>
+    <img src="/static/images/sglf.png" width=200/>
   </div>
 </template>
 
@@ -18,7 +19,6 @@ import Quad from '../effects/quad'
 import * as THREE from '../../external/three'
 
 export default {
-
   data () {
     return {
       title: 'A Short Guide to a LONG LIFE 读\"长寿指南\"笔记',
@@ -112,7 +112,7 @@ export default {
         'Top 10 Foods High in Trans Fat.',      
         'Top 10 Most sugary Foods.',      
         'Top High-Glycemic-Index Foods.高血糖指数食物。',      
-        'Top 11 Fish with Omega-3',      
+        'Top 11 Fish with Omega-3. 11种含有Omega-3脂肪酸的鱼类。',      
         'Top 10 Fish with Mercury Contamination. 汞污染',      
         'Top 10 Most Useful Health and Medicine Websites.',      
         'Top 5 Food Poisoning Culprits. 食物🍜中毒罪魁祸首。',      
@@ -126,6 +126,8 @@ export default {
   },
 
   mounted () {
+    console.log('Canvas loaded');
+    return;
     var scene = new THREE.Scene()
     scene.background = new THREE.Color(0x000000)
 
@@ -147,18 +149,18 @@ export default {
           scene.add(planeMesh)
         }
       }
-      console.log('Loading Complete!')
+      // console.log('Loading Complete!')
     }
 
     /* */
-    console.log(document.getElementById('app'))
+    // console.log(document.getElementById('app'))
     var app = document.getElementById('app')
 
     var canvas = quad.getRenderer().domElement
     canvas.id = 'canvas'
     
     if (app.children.length > 1) {
-      console.log(app)
+      // console.log(app)
       app.removeChild(app.lastChild)
     }
     app.appendChild(canvas)
@@ -177,6 +179,9 @@ export default {
         }
       }
     }
+  },
+  unmounted () {
+    console.log('canvas unmounted');
   }
 }
 </script>

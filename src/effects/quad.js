@@ -19,7 +19,7 @@ export default class Quad {
     planeMaterial.blendDst = THREE.OneMinusSrcAlphaFactor // default
 
     THREE.DefaultLoadingManager.onStart = function (url, itemsLoaded, itemsTotal) {
-      console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
 
     var loader = new THREE.TextureLoader()
@@ -36,7 +36,7 @@ export default class Quad {
     renderer.setSize(imgWidth, imgHeight)
     renderer.setViewport(0, 0, imgWidth, imgHeight)
     planeGeometry = new THREE.PlaneBufferGeometry(2, 2, 1, 1)
-    console.log('planeGeometry', planeGeometry)
+    // console.log('planeGeometry', planeGeometry)
 
     vsPath = vsPath === undefined ? 'vs.glsl' : vsPath
     fsPath = fsPath === undefined ? 'fs.glsl' : fsPath
@@ -48,7 +48,7 @@ export default class Quad {
     THREE.Cache.enabled = true
 
     THREE.DefaultLoadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
-      console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
+      // console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.')
     }
 
     THREE.DefaultLoadingManager.onError = function (url) {
@@ -85,13 +85,13 @@ export default class Quad {
       material.vertexShader = text
     },
     function (xhr) {
-      console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+      // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
     })
     loader.load(fsPath, function (text) {
       material.fragmentShader = text
     },
     function (xhr) {
-      console.log((xhr.loaded / xhr.total * 100) + '% loaded1')
+      // console.log((xhr.loaded / xhr.total * 100) + '% loaded1')
     })
   }
   getRenderer () {
