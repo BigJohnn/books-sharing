@@ -9,7 +9,9 @@
       <li align="left">I. Saving</li>
       <p align="left"  v-for="(item,i) in saving" :key="item.id" @click="pick_part2(i)">{{i+2+'. '+item}}</p>
       <li align="left">II. Investing</li>
+      <p align="left"  v-for="(item,i) in investing" :key="item.id" @click="pick_part3(i)">{{i+10+'. '+item}}</p>
       <li align="left">Conclusion</li>
+      <p align="left" v-for="(item) in part4" :key="item.id" @click="pick_part4">{{item}}</p>
       <img src="/static/images/jkb.jpeg" width=200/>
     </div>
 </template>
@@ -59,6 +61,40 @@
           "Why your time horizon is so important. 为何你的投资期如此重要。",
           "And why money isn\'t the most important factor. 为什么💰不是最重要的因素。",
         ],
+        investing: [
+          "Why Should You Invest? a.为未来的自己存钱；b.为抵抗通胀；c.为把个人资本转为金融资本。个人资本包括知识技能和时间，知识技能可以不断增长，但时间一去不返。金融资本可以在未来为你换取更多自由时间⌚️。",
+          "What Should You Invest In? # todo: 本章详细介绍了各种金融资产的特点，值得细品",
+          "Why You Shouldn\'t Buy Individual Stocks?",
+          "How Soon Should You Invest? ",
+          "Why You Shouldn\'t wait to buy the dip?",
+          "Why Investing Depends on Luck?",
+          "Why You Shouldn\' fear volatility? 为什么你不该害怕不稳定性。",
+          "How to But During a Crisis. 如何在经济危机中买入。为何市场崩溃是买入时机。重塑优势。市场恢复缓慢怎破？",
+          "When Should You Sell. 你应当何时卖出。",
+          "Where Should You Invest? A Roth IRA or 401(k) makes the most sense if you're confident of having a higher income in retirement than you do now. #todo 这章比较硬核，后续补充。",
+          "Why You Will Never Feel Rich? 为何你总感觉不到自己富有？",
+          "The Most Important Asset. ",
+        ],
+        investing_message:[
+          "Three reasons why growing your money is more important than ever before.增长财富如今变得如此重要的三个原因。",
+          "There is no one true path to wealth.",
+          "Why Underperforming is the least of your worries? 表现不佳是你最后需要担心的。",
+          "And why earlier is better than later.",
+          "Even God couldn\'t beat dollar-cost averaging. 上帝也无法打败平均成本法。",
+          "And thy you shouldn\'t care.",
+          "The price of admission for successful investing. 成功投资的入场价。",
+          "Why should you stay calm in a panic. 为何你应该临危不乱",
+          "On rebalancing, concentrated positions, and the purpose of investing. 关于再平衡、集中头寸和投资目的*",
+          "On taxes, Roth vs. traditional, and why you probably shouldn\'t max out your 401(k)",
+          "And why you probably already are.",
+          "And why you\'ll never get any more of if",
+        ],
+        part4: [
+          "Just Keep Buying Rules.",
+        ],
+        part4msg: [
+          "How to win the time traveler\'s game.",
+        ],
       }
     },
     methods: {
@@ -69,7 +105,15 @@
       pick_part1: function(index) {
         alert(this.part1msg[index])
         // console.log();
-      }
+      },
+      pick_part3: function(index) {
+        alert(this.investing_message[index])
+        // console.log();
+      },
+      pick_part4: function() {
+        alert(this.part4msg[0])
+        // console.log();
+      },
     },
     mounted() {
      console.log('JustKeepBuying'); 
