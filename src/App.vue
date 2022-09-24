@@ -1,9 +1,9 @@
 <template>
   <div id="app">
    <!-- <img src="./assets/logo.png"> -->
-   <router-link  to="/LongLife" replace>Long Life</router-link>
-   <router-link  to="/JustKeepBuying" replace>Keep Buying</router-link>
-    <router-view/>
+   <router-link active-class="active" to="/LongLife" replace>Long Life</router-link>
+   <router-link to="/JustKeepBuying" replace>Keep Buying</router-link>
+   <router-view/>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #25527e;
   margin-top: 60px;
 }
 </style>
