@@ -36,7 +36,7 @@
           "为什么大的市场调整总是好的买入时机。",
         ],
         part1: [
-          "Where Should You Start 如果没有可投资的金融资产，那么应该专注于省钱💰。",
+          "Where Should You Start 如果没有可投资的金融资产，那么应该专注于存钱💰。",
         ],
         part1msg: [
           "Why saving is for the poor and investing is for the rich? 为什么穷人需要省钱而富人需要投资理财",
@@ -63,17 +63,28 @@
         ],
         investing: [
           "Why Should You Invest? a.为未来的自己存钱；b.为抵抗通胀；c.为把个人资本转为金融资本。个人资本包括知识技能和时间，知识技能可以不断增长，但时间一去不返。金融资本可以在未来为你换取更多自由时间⌚️。",
-          "What Should You Invest In? # todo: 本章详细介绍了各种金融资产的特点，值得细品",
-          "Why You Shouldn\'t Buy Individual Stocks?",
-          "How Soon Should You Invest? ",
-          "Why You Shouldn\'t wait to buy the dip?",
-          "Why Investing Depends on Luck?",
+          "What Should You Invest In? # 致富的道路千万条，如何找到适合自己的一条？ 答案是不断去尝试，尝试各种路子。a.股票.可以通过购买个股，指数基金，ETF等方式来购买。优点是高回报，缺点是价格波动剧烈，基于市场情绪而非价值本身。\
+          b.债券.债券应该做为多元化资产而非风险资产。当股票或其他高风险资产下跌📉的时候，债券上涨📈；债券相对其他资产而言，有着更连续的收益流; 债券还提供流动性以重新平衡您的投资组合或其他负债。购买债券指数基金或者ETF会比购买个人债券更方便。\
+          c.投资房地产。思路是赚取租金。房子🏠后续还可以卖掉。高回报，尤其是举债经营的时候；但是管理房产和租户令人头疼。d.如果想走c,但不想自己管理房产，可以考虑房产投资信托（REITs）。好处是拥有不需要自己管理的房屋🏠产权，且经济向好的时期，\
+          与股市相关度较小；坏处是波动较股市强烈或持平，非上市的REITs资产流动性差，且市场崩盘的时候，与股市及其他高风险资产相关度高。e.农场。好处是与股票和其他金融资产相关度低，抗通胀以及低的下行潜力；坏处是流动性低，费用高，需要\"合格投资者\"\
+          身份去参与众包解决方案。f.小型企业/特许经营权/天使投资。有两个选项，担任企业所有权人&&执行官或仅担任企业所有权人。前者比如创业，往往需要付出比想象中多的努力；后者可以是天使投资人。高回报，但周期长，需要经历多次失败。g.著作特许权使用费。\
+          比如出个专辑💽之类的。h.自己的产品。比如写书📖，信息指南🧭，在线课程等。好处是完全的所有权，个人满足，可以创造有价值的品牌；坏处是劳动密集，且没有可靠的回报。（目前的文字属于h. :D) i.黄金，数字加密货币，艺术品等。致富道路多多，\
+          任君选择，发挥自身优势就好。",
+          "Why You Shouldn\'t Buy Individual Stocks? 为何不该买个股？",
+          "How Soon Should You Invest? 投资频率如何控制？",
+          "Why You Shouldn\'t wait to buy the dip? 为何不该逢低买入？",
+          "Why Investing Depends on Luck? 为什么投资依靠运气？",
           "Why You Shouldn\' fear volatility? 为什么你不该害怕不稳定性。",
           "How to But During a Crisis. 如何在经济危机中买入。为何市场崩溃是买入时机。重塑优势。市场恢复缓慢怎破？",
           "When Should You Sell. 你应当何时卖出。",
-          "Where Should You Invest? A Roth IRA or 401(k) makes the most sense if you're confident of having a higher income in retirement than you do now. #todo 这章比较硬核，后续补充。",
+          "Where Should You Invest? A Roth IRA or 401(k) makes the most sense if you're confident of having a higher income in retirement than you do now. \
+          401(k) 计划是许多美国雇主提供的退休储蓄计划，可为储蓄者提供税收优惠。它以美国国内税收法 (IRC)的一部分命名。\
+          注册 401(k) 的员工同意将每笔薪水的一定百分比直接支付到投资账户中。雇主可以匹配部分或全部的贡献。员工可以在多种投资选择中进行选择，通常是共同基金。\
+          有两种主要选择，每种都有不同的税收优势。在传统的 401(k) 中，员工的缴款从总收入中扣除，这意味着这笔钱来自扣除所得税之前的员工工资单。因此，雇员的应税收入会减去当年的缴款总额，并可作为该纳税年度的减税申报。在员工提取资金（通常是在退休时）之前，无需对捐款或投资收益征税。\
+          对于Roth 401(k)，供款从员工的税后收入中扣除，这意味着供款来自扣除所得税后的员工工资。因此，供款当年没有减税。在退休期间提取资金时，无需对员工的供款或投资收益缴纳额外税款。\
+          然而，并非所有雇主都提供罗斯账户的选项。如果提供罗斯，员工可以选择一个或另一个或两者兼而有之，最多可达到其免税供款的年度限额。",
           "Why You Will Never Feel Rich? 为何你总感觉不到自己富有？",
-          "The Most Important Asset. ",
+          "The Most Important Asset. 最重要的资产（身体是革命本钱）",
         ],
         investing_message:[
           "Three reasons why growing your money is more important than ever before.增长财富如今变得如此重要的三个原因。",

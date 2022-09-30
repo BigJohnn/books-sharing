@@ -21,7 +21,7 @@ import * as THREE from '../../external/three'
 export default {
   data () {
     return {
-      title: 'A Short Guide to a LONG LIFE 读\"长寿指南\"笔记',
+      title: 'A Short Guide to a LONG LIFE \"长寿指南\"笔记',
       author: 'DAVID B. AGUS, MD (BigJohhn整理)',
       outline: '哪些事情应该做？',
       outline2: '哪些事情避免做？',
@@ -126,7 +126,8 @@ export default {
   },
 
   mounted () {
-    console.log('Canvas loaded');
+    
+    console.log('Canvas loaded: ');
     return;
     var scene = new THREE.Scene()
     scene.background = new THREE.Color(0x000000)

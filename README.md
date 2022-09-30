@@ -1,4 +1,4 @@
-# Books Sharing, https://bigjohhn.vip.cpolar.cn/ ( Deployed on a Raspberry Pi4)
+# Books Sharing, https://bigjohhn.vip.cpolar.cn/
 
 ## How to Run
     brew install npm
