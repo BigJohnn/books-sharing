@@ -36,8 +36,8 @@
       {{ i+1+'. '+item }}
     </p>
     <img
-      src="../assets/images/sglf.png"
-      width="256/"
+      src="/src/assets/images/sglf.png"
+      width="256"
     >
   </div>
 </template>

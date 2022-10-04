@@ -58,8 +58,8 @@
       {{ item }}
     </p>
     <img
-      src="../assets/images/jkb.jpeg"
-      width="256/"
+      src="/src/assets/images/jkb.jpeg"
+      width="256"
     >
   </div>
 </template>

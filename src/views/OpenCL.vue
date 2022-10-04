@@ -187,7 +187,7 @@
     </li>
 
     <img
-      src="../assets/images/cl.jpeg"
+      src="/src/assets/images/cl.jpeg"
       width="1024/"
     >
   </div>
