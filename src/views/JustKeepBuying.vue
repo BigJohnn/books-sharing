@@ -1,71 +1,6 @@
-<template>
-  <div
-    v-cloak
-    class="JustKeepBuying"
-  >
-    <h1>{{ title }}</h1>
-    <h5>{{ author }}</h5>
-
-    <li align="left">
-      Introduction
-    </li>
-    <p
-      v-for="(item) in intro"
-      :key="item.id"
-      align="left"
-    >
-      {{ item }}
-    </p>
-    <p
-      v-for="(item, i) in part1"
-      :key="item.id"
-      align="left"
-      @click="pick_part1(i)"
-    >
-      {{ i+1+'. '+item }}
-    </p>
-    <li align="left">
-      I. Saving
-    </li>
-    <p
-      v-for="(item,i) in saving"
-      :key="item.id"
-      align="left"
-      @click="pick_part2(i)"
-    >
-      {{ i+2+'. '+item }}
-    </p>
-    <li align="left">
-      II. Investing
-    </li>
-    <p
-      v-for="(item,i) in investing"
-      :key="item.id"
-      align="left"
-      @click="pick_part3(i)"
-    >
-      {{ i+10+'. '+item }}
-    </p>
-    <li align="left">
-      Conclusion
-    </li>
-    <p
-      v-for="(item) in part4"
-      :key="item.id"
-      align="left"
-      @click="pick_part4"
-    >
-      {{ item }}
-    </p>
-    <img
-      src="/src/assets/images/jkb.jpeg"
-      width="256"
-    >
-  </div>
-</template>
-
 <script>
 /* eslint-disable */
+  import Bubble from '../components/BubbleComp.vue'
 
   export default {
     data () {
@@ -154,31 +89,107 @@
         part4msg: [
           "How to win the time traveler\'s game.",
         ],
+        showBubble: false,
+        bubbleText: 'hi'
       }
+    },
+    components: {
+      Bubble
     },
     methods: {
       pick_part2: function(index) {
-        alert(this.saveing_message[index])
-        // console.log();
+        this.bubbleText = this.saveing_message[index]
       },
       pick_part1: function(index) {
-        alert(this.part1msg[index])
-        // console.log();
+        this.bubbleText = this.part1msg[index]
       },
       pick_part3: function(index) {
-        alert(this.investing_message[index])
-        // console.log();
+        this.bubbleText = this.investing_message[index]
       },
       pick_part4: function() {
-        alert(this.part4msg[0])
-        // console.log();
+        this.bubbleText = this.part4msg[0]
       },
     },
     mounted() {
-     console.log('JustKeepBuying'); 
+      console.log('JustKeepBuying'); 
     }
   }
 </script>
+
+<template>
+  <div
+    v-cloak
+    class="JustKeepBuying"
+  >
+    <h1>{{ title }}</h1>
+    <h5>{{ author }}</h5>
+
+    <li align="left">
+      Introduction
+    </li>
+    <p
+      v-for="(item) in intro"
+      :key="item.id"
+      align="left"
+    >
+      {{ item }}
+    </p>
+    <p
+      v-for="(item, i) in part1"
+      :key="item.id"
+      align="left"
+      @click="pick_part1(i); showBubble=true"
+    >
+      {{ i+1+'. '+item }}
+    </p>
+    <li align="left">
+      I. Saving
+    </li>
+    <p
+      v-for="(item,i) in saving"
+      :key="item.id"
+      align="left"
+      @click="pick_part2(i); showBubble=true"
+    >
+      {{ i+2+'. '+item }}
+    </p>
+    <li align="left">
+      II. Investing
+    </li>
+    <p
+      v-for="(item,i) in investing"
+      :key="item.id"
+      align="left"
+      @click="pick_part3(i); showBubble=true"
+    >
+      {{ i+10+'. '+item }}
+    </p>
+    <li align="left">
+      Conclusion
+    </li>
+    <p
+      v-for="(item) in part4"
+      :key="item.id"
+      align="left"
+      @click="pick_part4(); showBubble=true"
+    >
+      {{ item }}
+    </p>
+    <img
+      src="/src/assets/images/jkb.jpeg"
+      width="256"
+    >
+
+    <Teleport to="body">
+    <bubble :show="showBubble" @close="showBubble = false">
+    <template #header>
+      <h3>{{bubbleText}}</h3>
+    </template>
+    </bubble>
+  </Teleport>
+  </div>
+</template>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/css" scoped>
     [v-cloak] {
