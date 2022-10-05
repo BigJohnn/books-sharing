@@ -14,6 +14,8 @@ const props = defineProps({
             <slot name="header">default header</slot>
           </div>
 
+          <!-- TODO: -->
+          
           <!-- <div class="modal-body">
             <slot name="body">default body</slot>
           </div>

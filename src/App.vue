@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, ref } from 'vue'
-import Bubble from './components/BubbleComp.vue'
 const bgmElem = ref<HTMLAudioElement>();
 
 var index = 0;
-const showModal = ref(false)
 const musicUrl = ref("/music/0.mp3");
 
 function tab() {
@@ -56,21 +54,10 @@ onMounted(() => registerAudioPlayer());
         <audio id="bgmElem" :src="musicUrl" type="audio/mpeg" oncontextmenu="return false" autoplay @ended="onEnded"/>
         <button class="btn_music" @click="onClick">音乐</button>
 
-        <button @click="showModal = true">Open Modal</button>
-        
       </nav>
     </div>
   </header>
-
   <RouterView />
-
-  <Teleport to="body">
-    <bubble :show="showModal" @close="showModal = false">
-    <template #header>
-      <h3>custom header</h3>
-    </template>
-    </bubble>
-  </Teleport>
 </template>
 
 <style scoped>
