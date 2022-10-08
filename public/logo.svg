@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: lime;
+      }
+
+      .cls-2 {
+        fill: #ffea05;
+      }
+
+      .cls-3 {
+        fill: #ed1c24;
+      }
+
+      .cls-4 {
+        fill: blue;
+      }
+    </style>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard 1">
+    <image x="231" y="148" width="2" height="15" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAICAYAAAA4GpVBAAAAF0lEQVQImWP4XzuZkYmBgYEBD8HAwAAAUAoCHwaWIgkAAAAASUVORK5CYII="/>
+    <rect class="cls-1" x="195" y="106" width="100" height="100"/>
+    <rect class="cls-2" x="150" y="284" width="120" height="120"/>
+    <rect class="cls-3" x="101" y="189" width="90" height="90"/>
+    <rect class="cls-4" x="274" y="210" width="110" height="110"/>
+  </g>
+</svg>

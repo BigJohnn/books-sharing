@@ -41,7 +41,7 @@ onMounted(() => registerAudioPlayer());
     <img
       alt="Vue logo"
       class="logo"
-      src="@/assets/icon.png"
+      src="@/assets/logo.svg"
       width="125"
       height="125"
     />
