@@ -7,8 +7,9 @@ var index = 0;
 const musicUrl = ref("/music/0.mp3");
 
 function tab() {
-  ++index;
-  index %= 8;
+  // ++index;
+  // index %= 8;
+  index = Math.round(Math.random() * 7.9999)
   musicUrl.value = "/music/" + index + ".mp3";
   
   bgmElem.value?.load();
@@ -30,7 +31,7 @@ function onEnded() {
 
 const registerAudioPlayer = (): void => {
 	console.log('Registering Audio PLayer');
-  // tab();
+  tab();
 };
 onMounted(() => registerAudioPlayer());
 
@@ -48,9 +49,10 @@ onMounted(() => registerAudioPlayer());
 
     <div class="wrapper">
       <nav>
-        <RouterLink active-class="active" to="/LongLife" replace>Long Life</RouterLink>
+        <RouterLink active-class="active" to="/AboutPage" replace>About</RouterLink>
+        <RouterLink to="/LongLife" replace>Long Life</RouterLink>
         <RouterLink to="/JustKeepBuying" replace>Keep Buying</RouterLink>
-        <RouterLink to="/OpenCL" replace>OpenCL</RouterLink>
+        <!-- <RouterLink to="/OpenCL" replace>OpenCL</RouterLink> -->
         <audio id="bgmElem" :src="musicUrl" type="audio/mpeg" oncontextmenu="return false" autoplay @ended="onEnded"/>
         <button class="btn_music" @click="onClick">音乐</button>
 

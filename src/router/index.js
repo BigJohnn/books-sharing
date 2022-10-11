@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/LongLife'
+      redirect: '/AboutPage'
     },
     {
       path: '/LongLife',
@@ -24,6 +24,11 @@ const router = createRouter({
       path: '/OpenCL',
       name: 'OpenCL',
       component: () => import("../views/OpenCL.vue"),
+    },
+    {
+      path: '/AboutPage',
+      name: 'AboutPage',
+      component: () => import("../views/AboutPage.vue"),
     }
   ]
 })

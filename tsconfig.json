@@ -2,6 +2,9 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/**/*"],
   "compilerOptions": {
+    "target": "ES6",
+    "moduleResolution": "node",
+    "strict": true,
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
