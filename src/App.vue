@@ -52,6 +52,7 @@ onMounted(() => registerAudioPlayer());
         <RouterLink active-class="active" to="/AboutPage" replace>About</RouterLink>
         <RouterLink to="/LongLife" replace>Long Life</RouterLink>
         <RouterLink to="/JustKeepBuying" replace>Keep Buying</RouterLink>
+        <RouterLink to="/ConsumerPsychology" replace>我们为什么买买买</RouterLink>
         <!-- <RouterLink to="/OpenCL" replace>OpenCL</RouterLink> -->
         <audio id="bgmElem" :src="musicUrl" type="audio/mpeg" oncontextmenu="return false" autoplay @ended="onEnded"/>
         <button class="btn_music" @click="onClick">音乐</button>
