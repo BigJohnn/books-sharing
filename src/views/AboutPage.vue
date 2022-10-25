@@ -11,13 +11,19 @@
     <br>
     <div class="image_view"></div>
     </div>
+    <footer>
+      <br>
+      <span>请提出您的宝贵意见:)</span>
+      <br>
+      <span>474471816@qq.com</span>
+    </footer>
 </template>
 
 <script setup  lang="ts">
 import { onMounted } from 'vue'
 import * as THREE from 'three'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
-
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 // import Quad from '../effects/quad'
 
 /* eslint-disable */
@@ -27,64 +33,7 @@ const props = defineProps({
 
 const initScene = (): void => {
 	console.log('initScene');
-  // var scene = new THREE.Scene()
-  // console.log(scene);
   
-  //   scene.background = new THREE.Color(0x000000)
-
-  //   var quad = new Quad()
-  //   // var quad1 = new Quad(undefined, 'fs1.glsl')
-
-  //   var renderList = [
-  //     quad
-  //     // quad1
-  //   ]
-
-  //   THREE.Cache.enabled = true
-
-  //   THREE.DefaultLoadingManager.onLoad = function () {
-  //     for (var i in renderList) {
-  //       if (renderList.hasOwnProperty(i)) {
-  //         var renderer = renderList[i]
-  //         var planeMesh = new THREE.Mesh(renderer.getGeometry(), renderer.getMaterial())
-  //         scene.add(planeMesh)
-  //       }
-  //     }
-  //     // console.log('Loading Complete!')
-  //   }
-
-    
-  //   /* */
-  //   // console.log(document.getElementById('aboutpage'))
-  //   var app = document.getElementById('aboutpage')
-    
-  //   var canvas = quad.getRenderer().domElement
-  //   canvas.id = 'canvas'
-  //   console.log('canvas',canvas);
-
-  //   // document.body.appendChild(canvas)
-  //   if(app?.children?.length && app?.children?.length > 1) {
-  //     if(app?.lastChild) {
-  //       app.removeChild(app?.lastChild)  
-  //     }
-  //   }
-    
-  //   app?.appendChild(canvas) //todo check online not render
-
-  //   var imgWidth = 512
-  //   var imgHeight = 512
-  //   var camera = new THREE.OrthographicCamera(-imgWidth / 2, imgWidth / 2, imgHeight / 2, imgHeight / -2, 0.1, 1000)
-  //   animate()
-
-  //   function animate () {
-  //     requestAnimationFrame(animate)
-  //     quad.clear(0xffff00)
-  //     for (var i in renderList) {
-  //       if (renderList.hasOwnProperty(i)) {
-  //         renderList[i].draw(scene, camera)
-  //       }
-  //     }
-  //   }
 let canvasWidth=256
 
 const scene = new THREE.Scene()
@@ -109,6 +58,35 @@ renderer.setSize(canvasWidth,canvasWidth)
 
 const controls = new TrackballControls(camera, renderer.domElement)
 
+// instantiate a loader
+const loader = new OBJLoader();
+
+let hangu: THREE.Group
+// load a resource
+loader.load(
+	// resource URL
+	'models/hangu.obj',
+	// called when resource is loaded
+	function ( object ) {
+
+    hangu = object
+		scene.add( object );
+
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+
 const geometry = new THREE.TorusKnotGeometry(0.5)
 const material = new THREE.MeshBasicMaterial({
     color: 0x002fa7,
@@ -117,6 +95,7 @@ const material = new THREE.MeshBasicMaterial({
 })
 
 const cube = new THREE.Mesh(geometry, material)
+cube.scale.multiply(new THREE.Vector3(0.2,0.2,0.2))
 scene.add(cube)
 
 window.addEventListener('resize', onWindowResize, false)
@@ -133,7 +112,11 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate)
-
+    
+    if(hangu) { //异步加载！
+      hangu.children[0].rotation.y += 0.003
+    }
+    
     cube.rotation.x += 0.003
     cube.rotation.y += 0.003
 

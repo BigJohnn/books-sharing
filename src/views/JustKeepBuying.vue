@@ -180,6 +180,15 @@
       width="256"
     >
 
+    <footer>
+      <img src="/src/assets/images/zf2x.jpeg" width="128"/>
+      <img src="/src/assets/images/vx.jpg" width="144"/>
+      <br>
+      <span>联系方式</span>
+      <br>
+      <span>474471816@qq.com</span>
+    </footer>
+    
     <Teleport to="body">
     <bubble :show="showBubble" @close="showBubble = false">
     <template #header>
