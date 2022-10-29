@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 const bgmElem = ref<HTMLAudioElement>();
 
 var index = 0;
@@ -55,7 +55,7 @@ onMounted(() => registerAudioPlayer());
         <RouterLink to="/ConsumerPsychology" replace>我们为什么买买买</RouterLink>
         <!-- <RouterLink to="/OpenCL" replace>OpenCL</RouterLink> -->
         <audio id="bgmElem" :src="musicUrl" type="audio/mpeg" oncontextmenu="return false" autoplay @ended="onEnded"/>
-        <button class="btn_music" @click="onClick">音乐</button>
+        <button class="btn_music" @click="onClick"></button>
 
       </nav>
     </div>
@@ -124,15 +124,22 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+  .btn_music {
+    color: #000000;
+    background: url('./assets/images/ruyi.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    width: 30px;
+    height: 30px;
+    border: none;
+    padding: 10px 100px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
 
-.btn_music{
-  color: #fff;
-  background: linear-gradient(315deg, #e8d015 25%, #8208c4);
-  border: none;
-  padding: 5px 10px;
-  margin: 5px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+
 </style>

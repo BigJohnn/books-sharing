@@ -175,16 +175,17 @@
     >
       {{ item }}
     </p>
+    <br>
     <img
       src="/src/assets/images/jkb.jpeg"
       width="256"
     >
 
     <footer>
-      <img src="/src/assets/images/zf2x.jpeg" width="128"/>
-      <img src="/src/assets/images/vx.jpg" width="144"/>
       <br>
-      <span>联系方式</span>
+      <br>      
+      <img src="/src/assets/images/zf2x.jpeg" width="128"/>
+      <img src="/src/assets/images/vx.jpg" width="130"/>
       <br>
       <span>474471816@qq.com</span>
     </footer>

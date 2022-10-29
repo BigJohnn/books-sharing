@@ -167,15 +167,16 @@
       人们参与回收利用的原因和方式存在很大的文化差异，这一点可以从其对环保产品的态度中看出。一些国家对环保产品的看法颇为积极，而另一些国家略消极。尽管
       关于“如何增加环保消费”的研究很少，还可以利用现有的心理学方法改变人们的思想和行为。这些方法有：榜样示范法、常规偏离法、刺激管控法和应急管理法。
     </p>
+    <br>
     <img
       src="/images/cp.jpeg"
       width="256"
     >
     <footer>
-      <img src="/src/assets/images/zf2x.jpeg" width="128"/>
-      <img src="/src/assets/images/vx.jpg" width="144"/>
       <br>
-      <span>联系方式</span>
+      <br>      
+      <img src="/src/assets/images/zf2x.jpeg" width="128"/>
+      <img src="/src/assets/images/vx.jpg" width="130"/>
       <br>
       <span>474471816@qq.com</span>
     </footer>

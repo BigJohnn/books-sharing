@@ -5,18 +5,19 @@
       id="aboutpage"
     >
     <h1>{{ title }}</h1>
-    <h1>这里与您分享书籍📚，知识与灵感。</h1>
-    <h2>不定时更新，</h2>
-    <h2>有空常来看看😄</h2>
+    <h1>这里与您分享书籍📚，知识与灵感.</h1>
+    
     <br>
+
     <div class="image_view"></div>
-    </div>
-    <footer>
+
+    <footer id="info">
       <br>
-      <span>请提出您的宝贵意见:)</span>
+      <span>Oct 29 15:02更</span>
       <br>
       <span>474471816@qq.com</span>
     </footer>
+    </div>
 </template>
 
 <script setup  lang="ts">
@@ -46,16 +47,12 @@ camera.position.z = 2
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.setSize(canvasWidth,canvasWidth)
-  var app = document.getElementById('aboutpage')
-  if(app?.children?.length && app?.children?.length > 1) {
-    if(app?.lastChild) {
-      app.removeChild(app?.lastChild)
-    }
-  }
+var app = document.getElementById('aboutpage')
+if(app?.children?.length && app?.children?.length > 2) {
+  var prevlast = app.children[app.children.length-2]
+  prevlast.parentNode?.replaceChild(renderer.domElement, prevlast)
+}
   
-  app?.appendChild(renderer.domElement) //todo check online not render
-// document.body.appendChild(renderer.domElement)
-
 const controls = new TrackballControls(camera, renderer.domElement)
 
 // instantiate a loader
@@ -122,6 +119,9 @@ function animate() {
 
     controls.update()
 
+    renderer.setClearColor(0x15231b, 1.0)
+    // renderer.clearColor()
+    renderer.clear(true)
     render()
 }
 
@@ -140,5 +140,12 @@ let title = '欢迎光临，'
 <style>
 .h1{
   font-style:oblique;
+}
+.image_view{
+  margin: auto;
+  top: 0;
+	left: 0;
+	right: 256;
+	bottom: 256;
 }
 </style>
