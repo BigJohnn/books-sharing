@@ -34,6 +34,11 @@ const router = createRouter({
       path: '/ConsumerPsychology',
       name: 'ConsumerPsychology',
       component: () => import("../views/ConsumerPsychology.vue"),
+    },
+    {
+      path: '/DruckerSayingOnIndividuals',
+      name: 'DruckerSayingOnIndividuals',
+      component: () => import("../views/DruckerSayingOnIndividuals.vue"),
     }
   ]
 })

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 const bgmElem = ref<HTMLAudioElement>();
 
 var index = 0;
@@ -51,6 +51,7 @@ onMounted(() => registerAudioPlayer());
       <nav>
         <RouterLink active-class="active" to="/AboutPage" replace>About</RouterLink>
         <RouterLink to="/LongLife" replace>Long Life</RouterLink>
+        <RouterLink to="/DruckerSayingOnIndividuals" replace>卓有成效的个人管理-书摘</RouterLink>
         <RouterLink to="/JustKeepBuying" replace>Keep Buying</RouterLink>
         <RouterLink to="/ConsumerPsychology" replace>我们为什么买买买</RouterLink>
         <!-- <RouterLink to="/OpenCL" replace>OpenCL</RouterLink> -->
