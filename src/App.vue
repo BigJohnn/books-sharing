@@ -5,7 +5,6 @@ const bgmElem = ref<HTMLAudioElement>();
 
 var index = 0;
 const musicUrl = ref("/music/0.mp3");
-
 function tab() {
   // ++index;
   // index %= 8;
@@ -51,13 +50,14 @@ onMounted(() => registerAudioPlayer());
       <nav>
         <RouterLink active-class="active" to="/AboutPage" replace>About</RouterLink>
         <RouterLink to="/LongLife" replace>Long Life</RouterLink>
-        <RouterLink to="/DruckerSayingOnIndividuals" replace>卓有成效的个人管理-书摘</RouterLink>
+        <RouterLink to="/DruckerSayingOnIndividuals" replace>卓有成效的个人管理</RouterLink>
         <RouterLink to="/JustKeepBuying" replace>Keep Buying</RouterLink>
         <RouterLink to="/ConsumerPsychology" replace>我们为什么买买买</RouterLink>
         <!-- <RouterLink to="/OpenCL" replace>OpenCL</RouterLink> -->
         <audio id="bgmElem" :src="musicUrl" type="audio/mpeg" oncontextmenu="return false" autoplay @ended="onEnded"/>
-        <button class="btn_music" @click="onClick"></button>
-
+        
+        <button @click="onClick" class="btn_music"></button>
+        
       </nav>
     </div>
   </header>
@@ -125,22 +125,21 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
 
   .btn_music {
+    text-align: right inherit;
     color: #000000;
-    background: url('./assets/images/ruyi.jpeg');
+    background: url('@/assets/images/ruyi.jpeg');
     background-size: contain;
     background-repeat: no-repeat;
     background-blend-mode: normal;
-    width: 30px;
-    height: 30px;
+    
+    background-size: 32px auto;
     border: none;
-    padding: 10px 100px;
-    margin: 5px;
-    border-radius: 8px;
+    padding: 20px 20px;
     cursor: pointer;
   }
-}
 
 
 </style>
