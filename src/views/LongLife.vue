@@ -61,7 +61,7 @@ export default {
   data () {
     return {
       title: 'A Short Guide to a LONG LIFE \"长寿指南\"笔记',
-      author: 'DAVID B. AGUS, MD (BigJohhn整理)',
+      author: 'DAVID B. AGUS, MD (🥥整理)',
       outline: '哪些事情应该做？',
       outline2: '哪些事情避免做？',
       outline3: '医生整理的一些条目（这部分限于篇幅，不再详细展开）',

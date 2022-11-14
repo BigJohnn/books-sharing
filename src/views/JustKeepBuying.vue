@@ -6,7 +6,7 @@
     data () {
       return {
         title: 'Just Keep Buying 笔记',
-        author: 'NICK MAGGIULLI (BigJohhn整理)',
+        author: 'NICK MAGGIULLI (🥥整理)',
         intro: [
           "改变人生的咒语：Keep Buying 继续购买。",
           "持续购买，指的是购买多种多样能带来收入的金融资产。这种收入包括直接或潜在收入。",

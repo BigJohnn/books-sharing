@@ -1,4 +1,4 @@
-# sharing-all
+# Sharing 分享一些东西
 
 Books Sharing, https://bigjohhn.vip.cpolar.cn/
 
@@ -13,6 +13,8 @@ npm install
 ```sh
 npm run dev
 ```
+
+————————————————————————————————————————————————————————
 
 ### Compile and Minify for Production
 

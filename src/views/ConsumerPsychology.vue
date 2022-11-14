@@ -47,7 +47,7 @@
       关注心理过程，社会学习理论聚焦人们如何在社会环境中观察他人。它们都为如何组织营销活动以提高消费者的学习能力提供了一些启示。
     </p>
     <h3 align="left">
-      III. 为什么消费者总是对你的广告视而不见
+      III. 如何才能吸引消费者的注意
     </h3>
     <p>
       感知会影响我们的感官，并解释所遇到的刺激的含义。消费者对消费相关信息的感知往往是无意识的，并且与先前的知识和经验联系在一起。
@@ -199,7 +199,7 @@
   var title_en = "Consumer Psychology"
   var author = "Cathrine V.Jansson-Boyd"
   var author_cn = "郑淑明译"
-  var author_x = "BigJohhn整理"
+  var author_x = "🥥整理"
 
   var outlines = [
     "人们只会关注所接触的某些刺激，并对其进行选择性的处理，同时忽略掉其他元素；",

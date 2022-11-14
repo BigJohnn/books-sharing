@@ -13,7 +13,7 @@
 
     <footer id="info">
       <br>
-      <span>Oct 29 18:55更</span>
+      <span>十一月十四日 9:18更</span>
       <br>
       <span>474471816@qq.com</span>
     </footer>
@@ -24,7 +24,8 @@
 import { onMounted } from 'vue'
 import * as THREE from 'three'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+// import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 // import Quad from '../effects/quad'
 
 /* eslint-disable */
@@ -55,19 +56,29 @@ if(app?.children?.length && app?.children?.length > 2) {
   
 const controls = new TrackballControls(camera, renderer.domElement)
 
-// instantiate a loader
-const loader = new OBJLoader();
+const geometry = new THREE.TorusKnotGeometry(0.5)
+const material = new THREE.MeshBasicMaterial({
+    color: 0x002fa7,
+    wireframe: true,
+    opacity:0.5,
+})
 
-let hangu: THREE.Group
+// instantiate a loader
+const loader = new STLLoader();
+
+// let bottle: THREE.Group
+let bottle: THREE.Mesh
+
 // load a resource
 loader.load(
 	// resource URL
-	'models/hangu.obj',
+	'models/bottle.stl',
 	// called when resource is loaded
 	function ( object ) {
 
-    hangu = object
-		scene.add( object );
+    bottle = new THREE.Mesh(object, material)
+    
+		scene.add( bottle );
 
 	},
 	// called when loading is in progresses
@@ -84,16 +95,11 @@ loader.load(
 	}
 );
 
-const geometry = new THREE.TorusKnotGeometry(0.5)
-const material = new THREE.MeshBasicMaterial({
-    color: 0x002fa7,
-    wireframe: true,
-    opacity:0.5,
-})
+
 
 const cube = new THREE.Mesh(geometry, material)
 cube.scale.multiply(new THREE.Vector3(0.2,0.2,0.2))
-scene.add(cube)
+// scene.add(cube)
 
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
@@ -110,12 +116,13 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate)
     
-    if(hangu) { //异步加载！
-      hangu.children[0].rotation.y += 0.003
+    if(bottle) { //异步加载！
+      // bottle.children[0].rotation.y += 0.003
+      bottle.rotation.y += 0.003
     }
     
-    cube.rotation.x += 0.003
-    cube.rotation.y += 0.003
+    // cube.rotation.x += 0.003
+    // cube.rotation.y += 0.003
 
     controls.update()
 
