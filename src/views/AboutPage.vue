@@ -27,6 +27,7 @@ import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls
 // import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader'
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 // import Quad from '../effects/quad'
 
 /* eslint-disable */
@@ -75,8 +76,9 @@ const material = new THREE.MeshPhongMaterial({
 })
 
 // instantiate a loader
-// const loader = new STLLoader();
-const loader = new PLYLoader();
+const loader = new STLLoader();
+const plyLoader = new PLYLoader();
+const fbxLoader = new FBXLoader();
 // let bottle: THREE.Group
 let bottle: THREE.Mesh
 let vessel: THREE.Mesh
@@ -84,13 +86,15 @@ let vessel: THREE.Mesh
 // load a resource
 loader.load(
 	// resource URL
-	'models/bottle.ply',
+	'models/bottle.stl',
 	// called when resource is loaded
 	function ( object ) {
     // object = BufferGeometryUtils.mergeBufferGeometries([object]);
     // object.computeVertexNormals()
     
     bottle = new THREE.Mesh(object, material)
+    var scale = 0.1
+    bottle.scale.multiply(new THREE.Vector3(scale,scale,scale))
     bottle.position.x = 0.7
 		scene.add( bottle );
 
@@ -110,7 +114,38 @@ loader.load(
 );
 
 // load a resource
-loader.load(
+fbxLoader.load(
+	// resource URL
+	'models/bottle.fbx',
+	// called when resource is loaded
+	function ( object ) {
+    // object = BufferGeometryUtils.mergeBufferGeometries([object]);
+    // object.computeVertexNormals()
+    
+    // bottle = new THREE.Mesh(object, material)
+    var scale = 0.1
+    // object.children[0].scale.multiply(new THREE.Vector3(scale,scale,scale))
+    // object.children[0].position.x = 0.7
+		// scene.add( object );
+
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+
+
+// load a resource
+plyLoader.load(
 	// resource URL
 	'models/yuhuchun.ply',
 	// called when resource is loaded
