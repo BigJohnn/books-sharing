@@ -13,7 +13,7 @@
 
     <footer id="info">
       <br>
-      <span>十一月十四日 9:18更</span>
+      <span>十一月十七日 10:16更</span>
       <br>
       <span>474471816@qq.com</span>
     </footer>
@@ -26,6 +26,7 @@ import * as THREE from 'three'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
 // import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
+import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader'
 // import Quad from '../effects/quad'
 
 /* eslint-disable */
@@ -39,6 +40,10 @@ const initScene = (): void => {
 let canvasWidth=256
 
 const scene = new THREE.Scene()
+scene.add(new THREE.HemisphereLight());
+var directionalLight = new THREE.DirectionalLight(0xffeedd);
+directionalLight.position.set(0, 0, 2);
+scene.add(directionalLight);
 
 // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000)
@@ -57,27 +62,36 @@ if(app?.children?.length && app?.children?.length > 2) {
 const controls = new TrackballControls(camera, renderer.domElement)
 
 const geometry = new THREE.TorusKnotGeometry(0.5)
-const material = new THREE.MeshBasicMaterial({
-    color: 0x002fa7,
-    wireframe: true,
-    opacity:0.5,
+// const material = new THREE.MeshBasicMaterial({
+//     color: 0x002fa7,
+//     wireframe: true,
+//     opacity:0.5,
+// })
+const material = new THREE.MeshPhongMaterial({
+  color: 0x002fa7,
+  opacity: 0.5,
+  side:THREE.DoubleSide,
+  transparent: true,
 })
 
 // instantiate a loader
-const loader = new STLLoader();
-
+// const loader = new STLLoader();
+const loader = new PLYLoader();
 // let bottle: THREE.Group
 let bottle: THREE.Mesh
+let vessel: THREE.Mesh
 
 // load a resource
 loader.load(
 	// resource URL
-	'models/bottle.stl',
+	'models/bottle.ply',
 	// called when resource is loaded
 	function ( object ) {
-
-    bottle = new THREE.Mesh(object, material)
+    // object = BufferGeometryUtils.mergeBufferGeometries([object]);
+    // object.computeVertexNormals()
     
+    bottle = new THREE.Mesh(object, material)
+    bottle.position.x = 0.7
 		scene.add( bottle );
 
 	},
@@ -95,7 +109,38 @@ loader.load(
 	}
 );
 
+// load a resource
+loader.load(
+	// resource URL
+	'models/yuhuchun.ply',
+	// called when resource is loaded
+	function ( object ) {
+    // object = BufferGeometryUtils.mergeBufferGeometries([object]);
+    // object.computeVertexNormals()
+    const material = new THREE.MeshPhongMaterial({
+      color: 0xc2c2cc,
+      opacity: 0.5,
+      side:THREE.DoubleSide,
+      transparent: false,
+    })
+    vessel = new THREE.Mesh(object, material)
+    vessel.position.x = -0.7
+		scene.add( vessel );
 
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
 
 const cube = new THREE.Mesh(geometry, material)
 cube.scale.multiply(new THREE.Vector3(0.2,0.2,0.2))
@@ -120,6 +165,10 @@ function animate() {
       // bottle.children[0].rotation.y += 0.003
       bottle.rotation.y += 0.003
     }
+
+    if(vessel){
+      vessel.rotation.y+=0.003
+    }
     
     // cube.rotation.x += 0.003
     // cube.rotation.y += 0.003
@@ -127,6 +176,7 @@ function animate() {
     controls.update()
 
     renderer.setClearColor(0x15231b, 1.0)
+    
     // renderer.clearColor()
     renderer.clear(true)
     render()
