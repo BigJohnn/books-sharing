@@ -1,4 +1,4 @@
-# Sharing 分享一些东西
+# Sharing 分享看过的书
 
 Books Sharing, https://bigjohhn.vip.cpolar.cn/
 
